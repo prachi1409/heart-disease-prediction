@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Heart Disease Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="title">❤️ Heart Disease Prediction</h2>
+
+    <form id="heartForm" class="form-card">
+        <input type="number" name="age" placeholder="Age" required>
+        <select name="sex" required>
+            <option value="">Gender</option>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+
+        <select name="cp" required>
+            <option value="">Chest Pain Type</option>
+            <option value="0">Typical angina</option>
+            <option value="1">Atypical angina</option>
+            <option value="2">Non-anginal pain</option>
+            <option value="3">Asymptomatic</option>
+        </select>
+
+        <input type="number" name="trestbps" placeholder="Resting BP" required>
+        <input type="number" name="chol" placeholder="Cholesterol" required>
+
+        <select name="fbs" required>
+            <option value="">Fasting Blood Sugar >120?</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <select name="restecg" required>
+            <option value="">Rest ECG</option>
+            <option value="0">Normal</option>
+            <option value="1">ST-T Wave Abnormality</option>
+            <option value="2">Left Ventricular Hypertrophy</option>
+        </select>
+
+        <input type="number" name="thalach" placeholder="Max Heart Rate" required>
+
+        <select name="exang" required>
+            <option value="">Exercise angina?</option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <input type="number" step="any" name="oldpeak" placeholder="Oldpeak" required>
+
+        <select name="slope" required>
+            <option value="">Slope</option>
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping</option>
+        </select>
+
+        <select name="ca" required>
+            <option value="">Number of major vessels (CA)</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+
+        <select name="thal" required>
+            <option value="">Thalassemia</option>
+            <option value="1">Normal</option>
+            <option value="2">Fixed defect</option>
+            <option value="3">Reversible defect</option>
+        </select>
+
+        <button type="submit" class="btn">Predict</button>
+    </form>
+
+    <h3 id="output" class="output"></h3>
+
+</div>
+
+<!-- JS MUST be loaded after HTML elements -->
+<script>console.log("Inline check: Page loaded")</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
